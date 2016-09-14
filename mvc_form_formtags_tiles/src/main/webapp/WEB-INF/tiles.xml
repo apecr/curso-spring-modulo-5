@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+ 	<!-- La definición principal del layout o root -->
+	<definition name="definicion.principal" template="/WEB-INF/tiles/layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/tiles/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/tiles/footer.jsp" />
+	</definition>
+
+    <!-- Esta es una definición Tiles hija que extiende de la principal/padre "definicion.principal" 
+         sobreescribe los componentes "title" y "body" -->
+	<definition name="estudianteForm" extends="definicion.principal">
+		<put-attribute name="title" value="mvc_form_formtags_tiles: Crear Estudiante" />
+		<put-attribute name="body" value="/WEB-INF/views/estudianteForm.jsp" />
+	</definition>
+
+    <!-- Esta es otra definición hija que extiende de la principal "definicion.principal" 
+         sobreescribe los componentes "title" y "body" -->
+	<definition name="estudianteOk" extends="definicion.principal">
+		<put-attribute name="title" value="mvc_form_formtags_tiles: Datos enviados con éxito" />
+		<put-attribute name="body" value="/WEB-INF/views/estudianteOk.jsp" />
+	</definition>
+
+	<definition name="home" extends="definicion.principal">
+		<put-attribute name="title" value="mvc_form_formtags_tiles: Home" />
+		<put-attribute name="body" value="/WEB-INF/views/home.jsp" />
+	</definition>
+</tiles-definitions>
